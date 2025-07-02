@@ -28,28 +28,28 @@ importers:
         version: 11.0.5
     devDependencies:
       '@biomejs/biome':
-        specifier: ^2.0.6
+        specifier: 2.0.6
         version: 2.0.6
       '@tsconfig/node-lts':
-        specifier: ^22.0.2
+        specifier: 22.0.2
         version: 22.0.2
       '@tsconfig/strictest':
-        specifier: ^2.0.5
+        specifier: 2.0.5
         version: 2.0.5
       '@types/node':
-        specifier: ^24.0.10
+        specifier: 24.0.10
         version: 24.0.10
       npm-run-all2:
-        specifier: ^8.0.4
+        specifier: 8.0.4
         version: 8.0.4
       sort-package-json:
-        specifier: ^3.4.0
+        specifier: 3.4.0
         version: 3.4.0
       typescript:
-        specifier: ^5.8.3
+        specifier: 5.8.3
         version: 5.8.3
       vite:
-        specifier: ^7.0.0
+        specifier: 7.0.0
         version: 7.0.0(@types/node@24.0.10)
 
 packages:
