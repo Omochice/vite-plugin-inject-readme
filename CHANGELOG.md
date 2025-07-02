@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/Omochice/vite-plugin-inject-readme/compare/v1.0.1...v1.0.2) (2025-07-02)
+
+
+### Continuous Integration
+
+* setup node before publish ([#13](https://github.com/Omochice/vite-plugin-inject-readme/issues/13)) ([509288d](https://github.com/Omochice/vite-plugin-inject-readme/commit/509288d0ad6afec395e2ae533530eaec6ff0bfd0))
+
 ## [1.0.1](https://github.com/Omochice/vite-plugin-inject-readme/compare/v1.0.0...v1.0.1) (2025-07-02)
 
 
