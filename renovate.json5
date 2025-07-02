@@ -8,7 +8,7 @@
       customType: "jsonata",
       fileFormat: "yaml",
       managerFilePatterns: [
-        ".github/workflows/push.yaml",
+        ".github/workflows/check.yml",
       ],
       matchStrings: [
         "{ 'currentValue': jobs.basic.strategy.matrix.node[0] }",
