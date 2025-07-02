@@ -1,0 +1,20 @@
+{
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: [
+    "github>Omochice/personal-renovate-config",
+  ],
+  customManagers: [
+    {
+      customType: "jsonata",
+      fileFormat: "yaml",
+      managerFilePatterns: [
+        ".github/workflows/check.yml",
+      ],
+      matchStrings: [
+        "{ 'currentValue': jobs.basic.strategy.matrix.node[0] }",
+      ],
+      datasourceTemplate: "node-version",
+      depNameTemplate: "node",
+    },
+  ],
+}
