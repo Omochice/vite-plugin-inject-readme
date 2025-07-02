@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/Omochice/vite-plugin-inject-readme/compare/v1.0.2...v1.0.3) (2025-07-02)
+
+
+### Miscellaneous Chores
+
+* specify `repository` ([#17](https://github.com/Omochice/vite-plugin-inject-readme/issues/17)) ([192e304](https://github.com/Omochice/vite-plugin-inject-readme/commit/192e3044668abf4f0595e48d02696a80b85bd811))
+
 ## [1.0.2](https://github.com/Omochice/vite-plugin-inject-readme/compare/v1.0.1...v1.0.2) (2025-07-02)
 
 
