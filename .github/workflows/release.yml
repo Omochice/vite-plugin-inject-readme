@@ -6,7 +6,8 @@ on:
       - main
 
 permissions:
-  contents: read
+  contents: write
+  id-token: write
 
 jobs:
   release-please:
@@ -45,7 +46,7 @@ jobs:
         uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
         with:
           run_install: true
-      - run: pnpm publish
+      - run: pnpm publish --provenance
         if: ${{ steps.release.outputs.release_created }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
