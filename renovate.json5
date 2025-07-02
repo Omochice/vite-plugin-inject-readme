@@ -11,7 +11,7 @@
         ".github/workflows/check.yml",
       ],
       matchStrings: [
-        "{ 'currentValue': jobs.basic.strategy.matrix.node[0] }",
+        "{ 'currentValue': jobs.check-typescript.strategy.matrix.node[0] }",
       ],
       datasourceTemplate: "node-version",
       depNameTemplate: "node",
