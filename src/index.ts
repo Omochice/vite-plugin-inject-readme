@@ -42,7 +42,8 @@ const injectReadme = (option: Partial<Option> = {}) => {
     },
     transformIndexHtml: async (html) => {
       if (pathToConfig == null) {
-        throw new Error("unprocessable error");
+        // NOTE: if specify this plugin, user have to use vite.config.ts. So this block is not reachable.
+        throw new Error("vite config is not found");
       }
       const { readme = "./README.md", marker = "<!-- README.md -->" } = option;
       const readmePath = resolve(dirname(pathToConfig), readme);
