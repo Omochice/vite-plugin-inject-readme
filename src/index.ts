@@ -36,7 +36,7 @@ const injectReadme = (option: Partial<Option> = {}) => {
     .use(rehypeStringify);
   let pathToConfig: string | undefined;
   const plugin = {
-    name: "vite-plugin-readme-inject",
+    name: "vite-plugin-inject-readme",
     configResolved: ({ configFile }) => {
       pathToConfig = configFile;
     },
