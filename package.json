@@ -20,7 +20,8 @@
 		"fmt:biome": "npm-run-all2 fmt:biome:*",
 		"fmt:biome:check": "biome check --write --unsafe .",
 		"fmt:biome:format": "biome format --write .",
-		"fmt:package": "sort-package-json"
+		"fmt:package": "sort-package-json",
+		"prepack": "tsc"
 	},
 	"dependencies": {
 		"rehype-stringify": "^10.0.1",
