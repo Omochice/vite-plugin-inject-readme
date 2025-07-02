@@ -36,13 +36,14 @@ const injectReadme = (option: Partial<Option> = {}) => {
     .use(rehypeStringify);
   let pathToConfig: string | undefined;
   const plugin = {
-    name: "vite-plugin-readme-inject",
+    name: "vite-plugin-inject-readme",
     configResolved: ({ configFile }) => {
       pathToConfig = configFile;
     },
     transformIndexHtml: async (html) => {
       if (pathToConfig == null) {
-        throw new Error("unprocessable error");
+        // NOTE: This plugin requires a vite.config.ts file, so this block is unreachable.
+        throw new Error("vite config is not found");
       }
       const { readme = "./README.md", marker = "<!-- README.md -->" } = option;
       const readmePath = resolve(dirname(pathToConfig), readme);
