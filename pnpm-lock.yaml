@@ -37,8 +37,8 @@ importers:
         specifier: 2.0.5
         version: 2.0.5
       '@types/node':
-        specifier: 24.0.11
-        version: 24.0.11
+        specifier: 24.0.12
+        version: 24.0.12
       npm-run-all2:
         specifier: 8.0.4
         version: 8.0.4
@@ -50,7 +50,7 @@ importers:
         version: 5.8.3
       vite:
         specifier: 7.0.3
-        version: 7.0.3(@types/node@24.0.11)
+        version: 7.0.3(@types/node@24.0.12)
 
 packages:
 
@@ -378,8 +378,8 @@ packages:
   '@types/ms@2.1.0':
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
 
-  '@types/node@24.0.11':
-    resolution: {integrity: sha512-CJV8eqrYnwQJGMrvcRhQmZfpyniDavB+7nAZYJc6w99hFYJyFN3INV1/2W3QfQrqM36WTLrijJ1fxxvGBmCSxA==}
+  '@types/node@24.0.12':
+    resolution: {integrity: sha512-LtOrbvDf5ndC9Xi+4QZjVL0woFymF/xSTKZKPgrrl7H7XoeDvnD+E2IclKVDyaK9UM756W/3BXqSU+JEHopA9g==}
 
   '@types/unist@3.0.3':
     resolution: {integrity: sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q==}
@@ -1011,7 +1011,7 @@ snapshots:
 
   '@types/ms@2.1.0': {}
 
-  '@types/node@24.0.11':
+  '@types/node@24.0.12':
     dependencies:
       undici-types: 7.8.0
 
@@ -1637,7 +1637,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
 
-  vite@7.0.3(@types/node@24.0.11):
+  vite@7.0.3(@types/node@24.0.12):
     dependencies:
       esbuild: 0.25.5
       fdir: 6.4.6(picomatch@4.0.2)
@@ -1646,7 +1646,7 @@ snapshots:
       rollup: 4.44.1
       tinyglobby: 0.2.14
     optionalDependencies:
-      '@types/node': 24.0.11
+      '@types/node': 24.0.12
       fsevents: 2.3.3
 
   which@2.0.2:
