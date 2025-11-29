@@ -31,8 +31,8 @@ importers:
         specifier: 2.3.7
         version: 2.3.7
       '@tsconfig/node-lts':
-        specifier: 22.0.4
-        version: 22.0.4
+        specifier: 24.0.0
+        version: 24.0.0
       '@tsconfig/strictest':
         specifier: 2.0.8
         version: 2.0.8
@@ -360,8 +360,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@tsconfig/node-lts@22.0.4':
-    resolution: {integrity: sha512-5eAeCX6l/EYe6H2UAw5nBgjfAgdlsR+lSp8YNNGwz+ixoi7JfJ5bOQvsiEhxGm5bOZFVF+cJSIj4tanpCCRMIw==}
+  '@tsconfig/node-lts@24.0.0':
+    resolution: {integrity: sha512-8mSTqWwCd6aQpvxSrpQlMoA9RiUZSs7bYhL5qsLXIIaN9HQaINeoydrRu/Y7/fws4bvfuyhs0BRnW9/NI8tySg==}
 
   '@tsconfig/strictest@2.0.8':
     resolution: {integrity: sha512-XnQ7vNz5HRN0r88GYf1J9JJjqtZPiHt2woGJOo2dYqyHGGcd6OLGqSlBB6p1j9mpzja6Oe5BoPqWmeDx6X9rLw==}
@@ -1015,7 +1015,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.44.1':
     optional: true
 
-  '@tsconfig/node-lts@22.0.4': {}
+  '@tsconfig/node-lts@24.0.0': {}
 
   '@tsconfig/strictest@2.0.8': {}
 
