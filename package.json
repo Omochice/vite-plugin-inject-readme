@@ -28,7 +28,8 @@
 		"fmt:biome": "biome check --write --unsafe .",
 		"fmt:package": "sort-package-json",
 		"prepack": "npm-run-all2 --sequential build prepack:*",
-		"prepack:clean-package": "clean-pkg-json"
+		"prepack:clean-package": "clean-pkg-json",
+		"test": "vitest run"
 	},
 	"dependencies": {
 		"rehype-stringify": "^10.0.1",
@@ -47,7 +48,8 @@
 		"clean-pkg-json": "1.4.1",
 		"npm-run-all2": "8.0.4",
 		"sort-package-json": "3.6.1",
-		"vite": "8.0.2"
+		"vite": "8.0.2",
+		"vitest": "4.1.2"
 	},
 	"peerDependencies": {
 		"vite": "^6.0.0 || ^7.0.0 || ^8.0.0"
