@@ -1,6 +1,13 @@
 {
 	"name": "@omochice/vite-plugin-inject-readme",
 	"version": "1.0.3",
+	"keywords": [
+		"vite",
+		"vite-plugin",
+		"plugin",
+		"readme",
+		"inject"
+	],
 	"repository": "github:Omochice/vite-plugin-inject-readme",
 	"license": "zlib",
 	"author": "Omochice",
