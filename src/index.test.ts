@@ -14,12 +14,12 @@ function createTempDir(): { path: string } & Disposable {
   };
 }
 
-function setupPlugin(
-  option: Parameters<typeof injectReadme>[0] = {},
-  dir: string,
-) {
+function setupPlugin(option: Parameters<typeof injectReadme>[0], dir: string) {
   const plugin = injectReadme(option);
-  plugin.configResolved({ configFile: join(dir, "vite.config.ts") } as never);
+  plugin.configResolved.call(
+    {} as never,
+    { configFile: join(dir, "vite.config.ts") } as never,
+  );
   return { plugin };
 }
 
@@ -38,7 +38,10 @@ describe("injectReadme", () => {
   it("throws when configResolved has not been called", async () => {
     const plugin = injectReadme();
     await expect(
-      plugin.transformIndexHtml("<html><!-- README.md --></html>", {} as never),
+      plugin.transformIndexHtml.call(
+        {} as never,
+        "<html><!-- README.md --></html>",
+      ),
     ).rejects.toThrow("vite config is not found");
   });
 
@@ -47,9 +50,9 @@ describe("injectReadme", () => {
     writeFileSync(join(tempDir.path, "README.md"), "# Hello\n\nWorld");
     const { plugin } = setupPlugin({}, tempDir.path);
 
-    const result = await plugin.transformIndexHtml(
-      "<html><!-- README.md --></html>",
+    const result = await plugin.transformIndexHtml.call(
       {} as never,
+      "<html><!-- README.md --></html>",
     );
 
     expect(result).toContain("<h1>Hello</h1>");
@@ -62,9 +65,9 @@ describe("injectReadme", () => {
     writeFileSync(join(tempDir.path, "README.md"), "**bold**");
     const { plugin } = setupPlugin({ marker: "{{readme}}" }, tempDir.path);
 
-    const result = await plugin.transformIndexHtml(
-      "<div>{{readme}}</div>",
+    const result = await plugin.transformIndexHtml.call(
       {} as never,
+      "<div>{{readme}}</div>",
     );
 
     expect(result).toContain("<strong>bold</strong>");
@@ -76,9 +79,9 @@ describe("injectReadme", () => {
     writeFileSync(join(tempDir.path, "DOCS.md"), "custom content");
     const { plugin } = setupPlugin({ readme: "./DOCS.md" }, tempDir.path);
 
-    const result = await plugin.transformIndexHtml(
-      "<!-- README.md -->",
+    const result = await plugin.transformIndexHtml.call(
       {} as never,
+      "<!-- README.md -->",
     );
 
     expect(result).toContain("custom content");
@@ -89,9 +92,9 @@ describe("injectReadme", () => {
     writeFileSync(join(tempDir.path, "README.md"), "text");
     const { plugin } = setupPlugin({}, tempDir.path);
 
-    const result = await plugin.transformIndexHtml(
-      "<!-- README.md -->|<!-- README.md -->",
+    const result = await plugin.transformIndexHtml.call(
       {} as never,
+      "<!-- README.md -->|<!-- README.md -->",
     );
 
     const parts = result.split("|");
@@ -105,9 +108,9 @@ describe("injectReadme", () => {
     writeFileSync(join(tempDir.path, "README.md"), table);
     const { plugin } = setupPlugin({}, tempDir.path);
 
-    const result = await plugin.transformIndexHtml(
-      "<!-- README.md -->",
+    const result = await plugin.transformIndexHtml.call(
       {} as never,
+      "<!-- README.md -->",
     );
 
     expect(result).toContain("<table>");
