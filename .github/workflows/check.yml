@@ -57,6 +57,7 @@ jobs:
           cache: pnpm
       - run: pnpm install
       - run: pnpm run check
+      - run: pnpm test
   validate-renovate-config:
     needs: path-filter
     if: needs.path-filter.outputs.renovate == 'true'
