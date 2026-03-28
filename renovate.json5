@@ -3,6 +3,13 @@
   extends: [
     "github>Omochice/personal-renovate-config#v1.11.3",
   ],
+  packageRules: [
+    {
+      matchPackageNames: ["vite"],
+      matchUpdateTypes: ["major"],
+      semanticCommitType: "feat",
+    },
+  ],
   customManagers: [
     {
       customType: "jsonata",
