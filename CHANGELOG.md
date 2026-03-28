@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/Omochice/vite-plugin-inject-readme/compare/v1.0.3...v1.1.0) (2026-03-28)
+
+
+### Features
+
+* **deps:** update dependency vite to v8 ([#206](https://github.com/Omochice/vite-plugin-inject-readme/issues/206)) ([7f18d14](https://github.com/Omochice/vite-plugin-inject-readme/commit/7f18d14d7a9a53aaa275b353f0e1373e73fcca7d))
+
 ## [1.0.3](https://github.com/Omochice/vite-plugin-inject-readme/compare/v1.0.2...v1.0.3) (2025-07-02)
 
 
