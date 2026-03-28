@@ -1,6 +1,13 @@
 {
 	"name": "@omochice/vite-plugin-inject-readme",
 	"version": "1.0.3",
+	"keywords": [
+		"vite",
+		"vite-plugin",
+		"plugin",
+		"readme",
+		"inject"
+	],
 	"repository": "github:Omochice/vite-plugin-inject-readme",
 	"license": "zlib",
 	"author": "Omochice",
@@ -41,6 +48,9 @@
 		"sort-package-json": "3.6.1",
 		"typescript": "5.9.3",
 		"vite": "7.3.1"
+	},
+	"peerDependencies": {
+		"vite": "^6 || ^7"
 	},
 	"packageManager": "pnpm@10.33.0",
 	"devEngines": {
