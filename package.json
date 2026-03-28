@@ -19,11 +19,11 @@
 		"src"
 	],
 	"scripts": {
-		"build": "tsc",
+		"build": "tsgo",
 		"check": "npm-run-all2 check:*",
 		"check:biome": "biome ci",
 		"check:package": "sort-package-json --check",
-		"check:tsc": "tsc --noEmit",
+		"check:tsc": "tsgo --noEmit",
 		"fmt": "npm-run-all2 fmt:*",
 		"fmt:biome": "biome check --write --unsafe .",
 		"fmt:package": "sort-package-json",
@@ -43,10 +43,10 @@
 		"@tsconfig/node-lts": "24.0.0",
 		"@tsconfig/strictest": "2.0.8",
 		"@types/node": "24.12.0",
+		"@typescript/native-preview": "7.0.0-dev.20260328.1",
 		"clean-pkg-json": "1.4.1",
 		"npm-run-all2": "8.0.4",
 		"sort-package-json": "3.6.1",
-		"typescript": "5.9.3",
 		"vite": "8.0.2"
 	},
 	"peerDependencies": {
