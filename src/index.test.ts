@@ -1,17 +1,26 @@
-import { mkdtempSync, writeFileSync } from "node:fs";
+import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import injectReadme from "./index.js";
 
+function createTempDir(): { path: string } & Disposable {
+  const path = mkdtempSync(join(tmpdir(), "vite-plugin-test-"));
+  return {
+    path,
+    [Symbol.dispose]() {
+      rmSync(path, { recursive: true, force: true });
+    },
+  };
+}
+
 function setupPlugin(
   option: Parameters<typeof injectReadme>[0] = {},
-  configDir?: string,
+  dir: string,
 ) {
   const plugin = injectReadme(option);
-  const dir = configDir ?? mkdtempSync(join(tmpdir(), "vite-plugin-test-"));
   plugin.configResolved({ configFile: join(dir, "vite.config.ts") } as never);
-  return { plugin, dir };
+  return { plugin };
 }
 
 describe("injectReadme", () => {
@@ -34,9 +43,9 @@ describe("injectReadme", () => {
   });
 
   it("replaces the default marker with processed README content", async () => {
-    const dir = mkdtempSync(join(tmpdir(), "vite-plugin-test-"));
-    writeFileSync(join(dir, "README.md"), "# Hello\n\nWorld");
-    const { plugin } = setupPlugin({}, dir);
+    using tempDir = createTempDir();
+    writeFileSync(join(tempDir.path, "README.md"), "# Hello\n\nWorld");
+    const { plugin } = setupPlugin({}, tempDir.path);
 
     const result = await plugin.transformIndexHtml(
       "<html><!-- README.md --></html>",
@@ -49,9 +58,9 @@ describe("injectReadme", () => {
   });
 
   it("replaces a custom marker", async () => {
-    const dir = mkdtempSync(join(tmpdir(), "vite-plugin-test-"));
-    writeFileSync(join(dir, "README.md"), "**bold**");
-    const { plugin } = setupPlugin({ marker: "{{readme}}" }, dir);
+    using tempDir = createTempDir();
+    writeFileSync(join(tempDir.path, "README.md"), "**bold**");
+    const { plugin } = setupPlugin({ marker: "{{readme}}" }, tempDir.path);
 
     const result = await plugin.transformIndexHtml(
       "<div>{{readme}}</div>",
@@ -63,9 +72,9 @@ describe("injectReadme", () => {
   });
 
   it("reads from a custom readme path", async () => {
-    const dir = mkdtempSync(join(tmpdir(), "vite-plugin-test-"));
-    writeFileSync(join(dir, "DOCS.md"), "custom content");
-    const { plugin } = setupPlugin({ readme: "./DOCS.md" }, dir);
+    using tempDir = createTempDir();
+    writeFileSync(join(tempDir.path, "DOCS.md"), "custom content");
+    const { plugin } = setupPlugin({ readme: "./DOCS.md" }, tempDir.path);
 
     const result = await plugin.transformIndexHtml(
       "<!-- README.md -->",
@@ -76,9 +85,9 @@ describe("injectReadme", () => {
   });
 
   it("replaces all occurrences of the marker", async () => {
-    const dir = mkdtempSync(join(tmpdir(), "vite-plugin-test-"));
-    writeFileSync(join(dir, "README.md"), "text");
-    const { plugin } = setupPlugin({}, dir);
+    using tempDir = createTempDir();
+    writeFileSync(join(tempDir.path, "README.md"), "text");
+    const { plugin } = setupPlugin({}, tempDir.path);
 
     const result = await plugin.transformIndexHtml(
       "<!-- README.md -->|<!-- README.md -->",
@@ -91,10 +100,10 @@ describe("injectReadme", () => {
   });
 
   it("processes GFM features like tables", async () => {
-    const dir = mkdtempSync(join(tmpdir(), "vite-plugin-test-"));
+    using tempDir = createTempDir();
     const table = "| a | b |\n| - | - |\n| 1 | 2 |";
-    writeFileSync(join(dir, "README.md"), table);
-    const { plugin } = setupPlugin({}, dir);
+    writeFileSync(join(tempDir.path, "README.md"), table);
+    const { plugin } = setupPlugin({}, tempDir.path);
 
     const result = await plugin.transformIndexHtml(
       "<!-- README.md -->",
