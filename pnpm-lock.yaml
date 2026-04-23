@@ -43,8 +43,8 @@ importers:
         specifier: 7.0.0-dev.20260420.1
         version: 7.0.0-dev.20260420.1
       clean-pkg-json:
-        specifier: 1.4.1
-        version: 1.4.1
+        specifier: 1.4.2
+        version: 1.4.2
       npm-run-all2:
         specifier: 8.0.4
         version: 8.0.4
@@ -373,8 +373,8 @@ packages:
   character-entities@2.0.2:
     resolution: {integrity: sha512-shx7oQ0Awen/BRIdkjkvz54PnEEI/EjwXDSIZp86/KKdbafHh1Df/RYGBhn4hbe2+uKC9FnT5UCEdyPz3ai9hQ==}
 
-  clean-pkg-json@1.4.1:
-    resolution: {integrity: sha512-tKXN+XMFG90t5f5kna9wYPvDeNHmBm/Xx81C5c085cwCOMOrZxaqEyF0G0C3i9nZMFhwX5/2euaDUn1h/f1tuA==}
+  clean-pkg-json@1.4.2:
+    resolution: {integrity: sha512-o201s9wWOYoZSRui4QyARSFc3n0IcYDu62hkJCQGX1eshSSQ/90QhS/KveWp/QlXSqcF/g/q2+IINj25V1BMKw==}
     hasBin: true
 
   comma-separated-tokens@2.0.3:
@@ -1198,7 +1198,7 @@ snapshots:
 
   character-entities@2.0.2: {}
 
-  clean-pkg-json@1.4.1: {}
+  clean-pkg-json@1.4.2: {}
 
   comma-separated-tokens@2.0.3: {}
 
