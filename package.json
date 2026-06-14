@@ -43,7 +43,7 @@
 		"@biomejs/biome": "2.4.16",
 		"@tsconfig/node-lts": "24.0.0",
 		"@tsconfig/strictest": "2.0.8",
-		"@types/node": "24.13.1",
+		"@types/node": "24.13.2",
 		"@typescript/native-preview": "7.0.0-dev.20260610.1",
 		"clean-pkg-json": "1.4.2",
 		"npm-run-all2": "9.0.1",
