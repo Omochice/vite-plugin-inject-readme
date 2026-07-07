@@ -54,11 +54,11 @@
 	"peerDependencies": {
 		"vite": "^6.0.0 || ^7.0.0 || ^8.0.0"
 	},
-	"packageManager": "pnpm@11.9.0",
+	"packageManager": "pnpm@11.10.0",
 	"devEngines": {
 		"packageManager": {
 			"name": "pnpm",
-			"version": "11.9.0",
+			"version": "11.10.0",
 			"onFail": "download"
 		}
 	}
