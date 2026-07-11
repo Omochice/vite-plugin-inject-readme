@@ -45,7 +45,7 @@
 		"@tsconfig/strictest": "2.0.8",
 		"@types/node": "24.13.3",
 		"@typescript/native-preview": "7.0.0-dev.20260707.2",
-		"clean-pkg-json": "1.4.2",
+		"clean-pkg-json": "2.0.0",
 		"npm-run-all2": "9.0.2",
 		"sort-package-json": "4.0.0",
 		"vite": "8.1.3",
