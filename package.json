@@ -48,7 +48,7 @@
 		"clean-pkg-json": "2.0.0",
 		"npm-run-all2": "9.0.2",
 		"sort-package-json": "4.0.0",
-		"vite": "8.1.4",
+		"vite": "8.1.5",
 		"vitest": "4.1.10"
 	},
 	"peerDependencies": {
