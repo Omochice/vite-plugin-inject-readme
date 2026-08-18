@@ -41,7 +41,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.5.8",
-		"@tsconfig/node-lts": "24.0.0",
+		"@tsconfig/node-lts": "24.0.1",
 		"@tsconfig/strictest": "2.0.8",
 		"@types/node": "24.13.3",
 		"@typescript/native-preview": "7.0.0-dev.20260707.2",
