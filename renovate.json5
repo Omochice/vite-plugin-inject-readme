@@ -10,18 +10,4 @@
       semanticCommitType: "feat",
     },
   ],
-  customManagers: [
-    {
-      customType: "jsonata",
-      fileFormat: "yaml",
-      managerFilePatterns: [
-        ".github/workflows/check.yml",
-      ],
-      matchStrings: [
-        "{ 'currentValue': jobs.`check-typescript`.strategy.matrix.node[0] }",
-      ],
-      datasourceTemplate: "node-version",
-      depNameTemplate: "node",
-    },
-  ],
 }
